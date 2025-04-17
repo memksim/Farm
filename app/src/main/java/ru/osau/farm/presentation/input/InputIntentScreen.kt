@@ -36,6 +36,7 @@ import ru.osau.farm.data.AnimalType
 @Composable
 fun InputIntentScreen(
     viewModel: InputViewModel,
+    onOpenSettingsClicked: () -> Unit,
     onNavigateToTarget: () -> Unit
 ) {
     var expandedAnimalType by remember { mutableStateOf(false) }
@@ -47,7 +48,7 @@ fun InputIntentScreen(
             TopAppBar(
                 title = { Text("Ввод данных") },
                 actions = {
-                    IconButton(onClick = { /* TODO: Open settings */ }) {
+                    IconButton(onClick = onOpenSettingsClicked) {
                         Icon(Icons.Default.Settings, contentDescription = "Настройки")
                     }
                 }

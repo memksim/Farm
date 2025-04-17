@@ -76,14 +76,8 @@ fun ResultScreen(
                         InfoRow(label = "Назначение", value = state.selectedPurpose?.localized)
                         InfoRow(label = "Количество голов", value = "${state.count}")
                         InfoRow(label = "Срок (мес)", value = "${state.monthsToTarget}")
-                        InfoRow(
-                            label = "Текущая продуктивность",
-                            value = "${state.currentProductivity}"
-                        )
-                        InfoRow(
-                            label = "Целевая продуктивность",
-                            value = "${state.targetProductivity}"
-                        )
+                        InfoRow(label = "Текущая продуктивность", value = "${state.currentProductivity}")
+                        InfoRow(label = "Целевая продуктивность", value = "${state.targetProductivity}")
                     }
                 }
             }
@@ -98,23 +92,13 @@ fun ResultScreen(
                         Text("\uD83D\uDCB0 Общая стоимость кормов", fontSize = 20.sp)
                         Spacer(modifier = Modifier.height(4.dp))
                         Text(
-                            "${
-                                String.format(
-                                    "%.2f",
-                                    state.calculationResult?.calculatedPrice
-                                )
-                            } руб.",
+                            "${String.format("%.2f", state.calculationResult?.calculatedPrice)} руб.",
                             fontSize = 24.sp,
                             color = MaterialTheme.colorScheme.primary
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         Text(
-                            "Стоимость на одну голову: ${
-                                String.format(
-                                    "%.2f",
-                                    state.calculationResult?.costPerHead
-                                )
-                            } руб.",
+                            "Стоимость на одну голову: ${String.format("%.2f", state.calculationResult?.costPerHead)} руб.",
                             fontSize = 16.sp
                         )
                         Spacer(modifier = Modifier.height(8.dp))
@@ -135,7 +119,7 @@ fun ResultScreen(
                     elevation = CardDefaults.cardElevation(4.dp)
                 ) {
                     Column(modifier = Modifier.padding(16.dp)) {
-                        Text("\uD83D\uDCB5 Стоимость кормов на голову", fontSize = 20.sp)
+                        Text("\uD83D\uDCB5 Стоимость кормов для животного", fontSize = 20.sp)
                         Spacer(modifier = Modifier.height(8.dp))
                         InfoRow(
                             label = "Комбикорм",

@@ -1,5 +1,7 @@
 package ru.osau.farm.data
 
+import android.util.Log
+
 class AnimalRepository(private val animalDao: AnimalDao) {
 
     suspend fun checkIsDatabaseEmpty(): Boolean {
@@ -16,6 +18,7 @@ class AnimalRepository(private val animalDao: AnimalDao) {
 
     suspend fun updateAnimal(animal: Animal) {
         animalDao.updateAnimal(animal)
+        Log.d("VKT", "updateAnimal: $animal")
     }
 
     suspend fun getAnimalByTypeAndPurpose(type: AnimalType?, purpose: AnimalPurpose?): Animal? {
