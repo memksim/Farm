@@ -46,6 +46,7 @@ object Calculator {
             recommendationsByAnimal[animal.type]?.get(animal.purpose) ?: emptyList()
 
         return CalculationResult(
+            animal = animal,
             calculatedPrice = totalCost,
             costPerHead = costPerHead,
             feedBreakdownPerHead = feedBreakdownPerHead,
